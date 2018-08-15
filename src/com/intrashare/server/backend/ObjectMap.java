@@ -5,6 +5,7 @@
  */
 package com.intrashare.server.backend;
 
+import com.intrashare.server.ui.MainFrameServer;
 import java.io.File;
 import java.util.HashMap;
 
@@ -14,20 +15,30 @@ import java.util.HashMap;
  */
 public class ObjectMap {
 
-    public static HashMap<String, String> createHashMap(String userName) {
-        File dir = new File("F:\\INTRA-SHARE\\User Folders\\" + userName);
+    public HashMap<String, HashMap<String, HashMap<Long, Long>>> createHashMap(String userName) {
+        File dir = new File(MainFrameServer.getPath() + "\\" + userName);
         File[] dirFiles = dir.listFiles();
 
-        HashMap<String, String> hashObj = new HashMap<>();
+        HashMap<String, HashMap<String, HashMap<Long, Long>>> objMap = new HashMap<>();
 
+//        for (int i = 0; i < dirFiles.length; i++) {
+//            if (dirFiles[i].isFile()) {
+//                hashObj.put(dirFiles[i].getName(), dirFiles[i].getPath());
+//            }
+//        }
         for (int i = 0; i < dirFiles.length; i++) {
             if (dirFiles[i].isFile()) {
-                hashObj.put(dirFiles[i].getName(), dirFiles[i].getPath());
+                objMap.put(dirFiles[i].getPath(), new HashMap<String, HashMap<Long, Long>>());
+                objMap.get(dirFiles[i].getPath()).put(dirFiles[i].getName(), new HashMap<Long, Long>());
+                objMap.get(dirFiles[i].getPath()).get(dirFiles[i].getName()).put(dirFiles[i].length(), dirFiles[i].lastModified());
             }
         }
-        
-  
-    return hashObj;
+
+        return objMap;
     }
+
+//    public static void putValueInHashMap(String name, String path, long size, long lastModified) {
+//
+//    }
 
 }

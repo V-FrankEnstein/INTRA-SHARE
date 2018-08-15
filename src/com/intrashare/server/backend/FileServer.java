@@ -5,7 +5,9 @@
  */
 package com.intrashare.server.backend;
 
+import com.intrashare.server.ui.MainFrameServer;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +16,8 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,21 +26,38 @@ import javax.swing.JOptionPane;
  */
 public class FileServer {
 
-    public static void main(String[] args) throws Exception {
-        ServerSocket serverSocket = new ServerSocket(1610);
-        System.out.println("File Server Ready");
-        while (true) {
-            Socket serverEnd = serverSocket.accept();
-            new FileThread(serverEnd);
+    /**
+     * **
+     *
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) {
+
+        try {
+            ServerSocket serverSocket = new ServerSocket(1610);
+            System.out.println("File Server Ready");
+            while (true) {
+                Socket serverEnd = serverSocket.accept();
+                new FileThread(serverEnd);
+            }
+        } catch (Exception e) {
+            System.out.println("Ecxeption in ServerSocket (FileServer)");
         }
+
     }
-    
+
 }
 
 class FileThread implements Runnable {
 
     Socket serverEnd;
 
+    /**
+     * ***
+     *
+     * @param s
+     */
     FileThread(Socket s) {
         System.out.println("thread created");
         this.al = new ArrayList<Byte>();
@@ -44,17 +65,20 @@ class FileThread implements Runnable {
         new Thread(this).start();
     }
 
+    /**
+     * ***
+     *
+     */
     @Override
     public void run() {
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(serverEnd.getInputStream()));
-//            PrintWriter toClient = new PrintWriter(serverEnd.getOutputStream(), true);
             InputStream fromClient = serverEnd.getInputStream();
             OutputStream toClient = serverEnd.getOutputStream();
-            // while (true) {
-                fileName = in.readLine();
-                userName = in.readLine();
-                
+
+            fileName = in.readLine();
+            userName = in.readLine();
+
             System.out.println("before while");
             int i;
             while ((i = fromClient.read()) != -1) {
@@ -67,7 +91,7 @@ class FileThread implements Runnable {
             for (int o = 0; o < al.size(); o++) {
                 idk[o] = (byte) al.get(o);
             }
-
+            
             createFile(idk, fileName, userName);
 
         } catch (Exception e) {
@@ -75,25 +99,29 @@ class FileThread implements Runnable {
         }
     }
 
+    /**
+     *
+     * @param content
+     * @param fileName
+     * @param userName
+     * 
+     */
+
     public static void createFile(byte[] content, String fileName, String userName) {
         System.out.println("File name in UserRegistrationFolder = " + userName);
-        try {
-            //byte[] content = fileData.getBytes();
-            //("F:\\INTRA-SHARE\\User Folders\\" +  userName.trim()   + "\\" + fileName.trim())
-            try (FileOutputStream out = new FileOutputStream("F:\\INTRA-SHARE\\User Folders\\" + userName.trim() + "\\" + fileName.trim())) {
 
-                //if(content != null)
+            try (FileOutputStream out = new FileOutputStream(MainFrameServer.getPath() + "\\" + userName.trim() + "\\" + fileName.trim())) {
                 out.write(content);
-            }
-        } catch (IOException e) {
-
+            } catch (FileNotFoundException ex) {
+            Logger.getLogger(FileThread.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(FileThread.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     //variable declarations...!!
-    private String receivedData = "";
     private String fileName = null;
     private String userName = null;
     ArrayList<Byte> al;
-
+    
 }

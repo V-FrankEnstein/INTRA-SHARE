@@ -5,10 +5,10 @@
  */
 package com.intrashare.server.backend;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.Connection;
@@ -23,17 +23,18 @@ import javax.swing.JOptionPane;
  *
  * @author Patro
  */
-
 public class LoginServer {
 
-    public static void main(String[] args) throws Exception {
-        ServerSocket sS = new ServerSocket(1612);
-        
-        System.out.println("Login Server Ready");
-        new LoginThreadRead(sS);
-        
+    public static void main(String[] args) {
+        try {
+            ServerSocket sS = new ServerSocket(1612);
+            System.out.println("Login Server Ready");
+            new LoginThreadRead(sS);
+        } catch (Exception e) {
+            System.out.println("Exception on Server Socket..>>!!");
+        }
+
     }
-//        new LoginThreadSend(serverEnd);
 
 }
 
@@ -42,6 +43,10 @@ class LoginThreadRead implements Runnable {
     Socket serverEnd;
     ServerSocket sS;
 
+    /**
+     *
+     * @param s
+     */
     LoginThreadRead(ServerSocket s) {
 
         conn = MySqlConnect.connectDB();
@@ -52,54 +57,53 @@ class LoginThreadRead implements Runnable {
     private void acceptClient() {
         try {
             serverEnd = sS.accept();
+            fromClient = new ObjectInputStream(serverEnd.getInputStream());
+            toClient = new ObjectOutputStream(serverEnd.getOutputStream());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "exception in acceptiong client.....!!!!!");
         }
     }
 
+    ObjectInputStream fromClient = null;
+    ObjectOutputStream toClient = null;
+
     @Override
     public void run() {
         while (true) {
             try {
-                acceptClient();//mere num pe ca
-                
-                
-                System.out.println("Received Login Info");
-                class T1 extends Thread{
+                acceptClient();
+                class T1 extends Thread implements Serializable {
+
                     Socket serverEnd;
                     HashMap<String, String> mapObj = new HashMap<>();
 
                     public void setServer(Socket s) {
                         serverEnd = s;
                     }
-                    
+
                     @Override
                     public void run() {
 
-                        BufferedReader fromClient = null;
-                        try {
-                            fromClient = new BufferedReader(new InputStreamReader(serverEnd.getInputStream()));
-                        } catch (IOException ex) {
-                            Logger.getLogger(LoginThreadRead.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                        while (true) {
+//                        while (true) {
                             try {
-                                userName = fromClient.readLine();
-                                password = fromClient.readLine();
+                                userName = (String) fromClient.readObject();
+                                password = (String) fromClient.readObject();
+                                System.out.println("Data aagaya userNamer = " + userName + " Password = " + password);
                             } catch (IOException ex) {
+                                Logger.getLogger(LoginThreadRead.class.getName()).log(Level.SEVERE, null, ex);
+                            } catch (ClassNotFoundException ex) {
                                 Logger.getLogger(LoginThreadRead.class.getName()).log(Level.SEVERE, null, ex);
                             }
                             boolean status = checkStatus();
-//                            if(status == true){
-//                                mapObj = ObjectMap.createHashMap(userName);
-//                            }
-                                
-                            LoginThreadSend t = new LoginThreadSend(serverEnd);//To change body of generated methods, choose Tools | Templates.
+
+                            LoginThreadSend t = new LoginThreadSend(serverEnd);
                             t.setStatus(status);
-                        }
+                            t.setToClient(toClient);
+                            t.setUserName(userName);
+//                        }
                     }
                 }
-                T1 t1 =new T1();
+                T1 t1 = new T1();
                 t1.setServer(serverEnd);
                 t1.start();
 
@@ -120,7 +124,6 @@ class LoginThreadRead implements Runnable {
     ResultSet rs;
     static String userName = "", password = "";
 
-    
 }
 
 class LoginThreadSend implements Runnable {
@@ -128,6 +131,10 @@ class LoginThreadSend implements Runnable {
     Socket serverEnd;
     boolean status;
 
+    /**
+     *
+     * @param s
+     */
     LoginThreadSend(Socket s) {
         System.out.println("inside Send waala");
         this.serverEnd = s;
@@ -135,33 +142,49 @@ class LoginThreadSend implements Runnable {
         new Thread(this).start();
     }
 
-    
-    
+    /**
+     *
+     * @param status
+     */
     public void setStatus(boolean status) {
         this.status = status;
     }
 
+    /**
+     *
+     * @param toClient
+     */
+    public void setToClient(ObjectOutputStream toClient) {
+        this.toClient = toClient;
+    }
+
+    /**
+     *
+     * @param userName
+     */
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     @Override
     public void run() {
-//        System.out.println("inside run");
-//        while (true) {
         try {
-//            System.out.println("inside try of send");
-//            OutputStream in = serverEnd.getOutputStream();
-            PrintWriter toClient = new PrintWriter(serverEnd.getOutputStream(),true );
-         
-//            System.out.println("before sending status =======" + status);
+            System.out.println("before sending status =======" + status);
             String stat = status + "";
-            toClient.println(stat + "");
-//            System.out.println("data sent to client");
-//                    stat = "";
-//                    if(stat.equals(""))
-//                        break;
+            toClient.writeObject(stat);
+            System.out.println("status walasss data bhej diya server se client ko");
+            
+            if (stat.equals("true")) {
+                System.out.println("inside trueeeeeeeeeeeeeeeeeeeeeeeeeeee");
+                HashMap<String, HashMap<String, HashMap<Long, Long>>> hm = new ObjectMap().createHashMap(userName);
+                System.out.println("got the HM");
+                toClient.writeObject(hm);
+                
+            }
+            toClient.flush();
         } catch (Exception e) {
-            System.out.println("catch exception");
-//            JOptionPane.showMessageDialog(null, "Exception in ServerLogin class : " + e.getMessage(), "ServerLoginFile", JOptionPane.ERROR_MESSAGE);
+            System.out.println("catch exception" + e);
         }
-//        }
     }
 
     //Variable decleration
@@ -169,4 +192,6 @@ class LoginThreadSend implements Runnable {
     Statement statement;
     Connection conn = null;
     ResultSet rs;
+    ObjectOutputStream toClient = null;
+    String userName = "";
 }

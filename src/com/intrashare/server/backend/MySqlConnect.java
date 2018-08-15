@@ -17,8 +17,7 @@ import javax.swing.JOptionPane;
 public class MySqlConnect {
     public static Connection connectDB(){
         try {
-            
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + ConstantsInterface.DATABASE_NAME, "victor", "12421");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + ConstantsInterface.DATABASE_NAME, "root", "");
             //JOptionPane.showMessageDialog(null, "Connection Successful", "Connection", JOptionPane.INFORMATION_MESSAGE);
             return conn;
         } catch (SQLException e) {

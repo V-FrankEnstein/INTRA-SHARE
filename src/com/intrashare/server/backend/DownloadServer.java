@@ -23,13 +23,19 @@ import java.util.logging.Logger;
  */
 public class DownloadServer {
 
-    public static void main(String[] args) throws Exception {
-        ServerSocket serverSocket = new ServerSocket(1615);
-        System.out.println("Download Server Ready");
-        while (true) {
-            Socket serverEnd = serverSocket.accept();
-            new DownloadThread(serverEnd);
+    public static void main(String[] args) {
+
+        try {
+            ServerSocket serverSocket = new ServerSocket(1615);
+            System.out.println("Download Server Ready");
+            while (true) {
+                Socket serverEnd = serverSocket.accept();
+                new DownloadThread(serverEnd);
+            }
+        } catch (Exception e) {
+            System.out.println("Ecxeption in ServerSocket (DownloadServer)");
         }
+
     }
 }
 
@@ -48,7 +54,7 @@ class DownloadThread implements Runnable {
         DataOutputStream toClient;
         try {
             fromClient = new BufferedReader(new InputStreamReader(serverEnd.getInputStream()));
-            
+
         } catch (IOException ex) {
             Logger.getLogger(LoginThreadRead.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -63,22 +69,16 @@ class DownloadThread implements Runnable {
                 toClient.writeInt(fileContents.length);
                 toClient.write(fileContents);
                 System.out.println("data sending completed (file k contents)");
-                
 
             } catch (IOException ex) {
                 Logger.getLogger(LoginThreadRead.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
-   
+
     private byte[] readFileContents(String filePath) throws IOException {
         Path path = Paths.get(filePath);
         return Files.readAllBytes(path);
     }
 
-    
-    
-    
-    
-    
 }

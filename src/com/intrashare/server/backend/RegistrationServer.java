@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.intrashare.server.backend;
 
 import java.io.BufferedReader;
@@ -23,10 +24,16 @@ import javax.swing.JOptionPane;
  */
 public class RegistrationServer {
 
-    public static void main(String[] args) throws Exception {
-        ServerSocket sS = new ServerSocket(1611);
-        System.out.println("Registration Server Ready");
-        new RegistrationThreadRead(sS);
+    public static void main(String[] args) {
+
+        try {
+            ServerSocket sS = new ServerSocket(1611);
+            System.out.println("Registration Server Ready");
+            new RegistrationThreadRead(sS);
+        } catch (Exception e) {
+            System.out.println("Exception in ServerSocket (Reg Server)");
+        }
+
     }
 }
 
@@ -34,11 +41,10 @@ class RegistrationThreadRead implements Runnable {
 
     ServerSocket sS;
     Socket serverEnd;
-    Connection conn = null;
-
+    static Connection conn = MySqlConnect.connectDB();;
+    
     RegistrationThreadRead(ServerSocket s) {
 
-        conn = MySqlConnect.connectDB();
         this.sS = s;
         new Thread(this).start();
     }
@@ -56,7 +62,6 @@ class RegistrationThreadRead implements Runnable {
         while (true) {
             try {
                 acceptClient();
-                System.out.println("Received Registration Info");
                 class T2 extends Thread {
 
                     Socket serverEnd;
@@ -74,7 +79,7 @@ class RegistrationThreadRead implements Runnable {
                         } catch (Exception ex) {
                             Logger.getLogger(LoginThreadRead.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        while (true) {
+//                        while (true) {
                             try {
                                 firstName = fromClient.readLine();
                                 lastName = fromClient.readLine();
@@ -94,7 +99,7 @@ class RegistrationThreadRead implements Runnable {
                             System.out.println("status ==== " + status);
                             RegistrationThreadSend t1 = new RegistrationThreadSend(serverEnd);
                             t1.setStatus(status);
-                        }
+//                        }
                     }
                 }
                 T2 t2 = new T2();
@@ -108,46 +113,49 @@ class RegistrationThreadRead implements Runnable {
     }
 
     public static boolean checkStatus() throws SQLException {
+
+        if (DatabaseOperations.ifUserExists(userName)) {
+            return false;
+        }
         if (DatabaseOperations.insertRecord(firstName, lastName, userName, password, confirmPassword)) {
             FileFolderOperation.createFolder(userName);
             return true;
         }
         return false;
     }
-    
+
     //Variable Declerastion...!!
     static String firstName = "", lastName = "", userName = "", password = "", confirmPassword = "";
 }
 
+class RegistrationThreadSend implements Runnable {
 
-class RegistrationThreadSend implements Runnable{
     Socket serverEnd;
     boolean status;
-    
-    RegistrationThreadSend(Socket s){
+
+    RegistrationThreadSend(Socket s) {
         System.out.println("inside Send wala Registration");
         this.serverEnd = s;
         this.status = status;
         new Thread(this).start();
     }
-    
-    public void setStatus(boolean status){
+
+    public void setStatus(boolean status) {
         this.status = status;
     }
-    
+
     @Override
-    public void run(){
+    public void run() {
         try {
             PrintWriter toClient = new PrintWriter(serverEnd.getOutputStream(), true);
-            String stat = status +"";
+            String stat = status + "";
             toClient.println(stat + "");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Exception in ServerLogin class : " + e.getMessage(), "ServerLoginFile", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     //Variable Decleration
     Connection conn = null;
-    
-    
+
 }
