@@ -11,8 +11,6 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 
@@ -40,8 +38,6 @@ public class LoginInfoToServer implements Serializable {
         clientEndRegistration.close();
         
     }
-    
-    
     
     private boolean establishConnection() {
         try {
@@ -88,6 +84,7 @@ public class LoginInfoToServer implements Serializable {
         this.hm = hm;
     }
 
+//    Variable Declaration
     Socket clientEndRegistration;
     ObjectInputStream fromServer;
     ObjectOutputStream toServer;

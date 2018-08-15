@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/frontend/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INTRA-SHARE/com/intrashare/server/backend/TID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INTRA-SHARE/com/intrashare/server/backend/TID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INTRA-SHARE/frontend/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INTRA-SHARE/frontend/INTRA-SHARE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INTRA-SHARE/frontend/INTRA-SHARE.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/intrashare/server/backend/DeleteServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/intrashare/server/backend/ObjectMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/intrashare/server/backend/ObjectMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/intrashare/server/backend/TID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/intrashare/server/backend/TID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/intrashare/server/backend/FileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/intrashare/server/backend/FileServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/INTRA-SHARE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/INTRA-SHARE.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/TableHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/TableHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/LoginInfoToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/LoginInfoToServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/style.css" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,126 +67,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frontend/Main.java">
+      <file leaf-file-name="INTRA-SHARE.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/frontend/INTRA-SHARE.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="276">
+              <caret line="12" column="129" selection-start-line="12" selection-start-column="129" selection-end-line="12" selection-end-column="129" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginInfoToServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frontend/LoginInfoToServer.java">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/frontend/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#730#731#0" expanded="true" />
-                <element signature="e#766#767#0" expanded="true" />
-                <element signature="e#2641#2642#0" expanded="true" />
-                <element signature="e#2669#2670#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frontend/Login.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#111#112#0" expanded="true" />
-                <element signature="e#170#171#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainFrameServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intrashare/server/ui/MainFrameServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="107" column="79" selection-start-line="107" selection-start-column="79" selection-end-line="107" selection-end-column="79" />
-              <folding>
-                <element signature="method#btnStartServerActionPerformed#0;class#MainFrameServer#0" />
-                <element signature="method#main#0;class#MainFrameServer#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/frontend/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#verifyLogin#0;class#Controller#0" />
-                <element signature="method#verifyLogin#0;class#Controller#0" />
-                <element signature="method#tableHandler#0;class#Controller#0" />
-                <element signature="method#registerPanel#0;class#Controller#0" />
-                <element signature="method#registerAction#0;class#Controller#0" />
-                <element signature="method#cancelAction#0;class#Controller#0" />
-                <element signature="docComment;method#downloadAction#0;class#Controller#0" />
-                <element signature="method#downloadAction#0;class#Controller#0" />
-                <element signature="method#deleteAction#0;class#Controller#0" />
-                <element signature="e#7828#7829#0" expanded="true" />
-                <element signature="e#7858#7859#0" expanded="true" />
-                <element signature="method#showMainFrame#0;class#Controller#0" />
-                <element signature="e#8249#8250#0" expanded="true" />
-                <element signature="e#8291#8292#0" expanded="true" />
-                <element signature="e#8366#8367#0" expanded="true" />
-                <element signature="e#8412#8413#0" expanded="true" />
-                <element signature="method#processDelete#0;class#Controller#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TableHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frontend/TableHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-              <folding>
-                <element signature="e#947#1236#0" />
-                <element signature="e#1319#1600#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DownloadInfoToServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frontend/DownloadInfoToServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeleteInfoToServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frontend/DeleteInfoToServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intrashare/server/backend/FileServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+            <state>
+              <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -239,16 +127,18 @@
         <option value="$PROJECT_DIR$/src/frontend/Main.java" />
         <option value="$PROJECT_DIR$/src/com/intrashare/server/backend/TID.java" />
         <option value="$PROJECT_DIR$/src/frontend/RegistrationInfoToServer.java" />
-        <option value="$PROJECT_DIR$/src/frontend/INTRA-SHARE.fxml" />
         <option value="$PROJECT_DIR$/src/frontend/Register.java" />
         <option value="$PROJECT_DIR$/src/com/intrashare/server/backend/ObjectMap.java" />
-        <option value="$PROJECT_DIR$/src/frontend/LoginInfoToServer.java" />
         <option value="$PROJECT_DIR$/src/frontend/DownloadInfoToServer.java" />
         <option value="$PROJECT_DIR$/src/frontend/DeleteInfoToServer.java" />
         <option value="$PROJECT_DIR$/src/frontend/Login.java" />
         <option value="$PROJECT_DIR$/src/frontend/TableHandler.java" />
         <option value="$PROJECT_DIR$/src/frontend/FileToServer.java" />
         <option value="$PROJECT_DIR$/src/frontend/Controller.java" />
+        <option value="$PROJECT_DIR$/src/frontend/LoginInfoToServer.java" />
+        <option value="$PROJECT_DIR$/src/com/intrashare/server/backend/FileServer.java" />
+        <option value="$PROJECT_DIR$/src/frontend/style.css" />
+        <option value="$PROJECT_DIR$/src/frontend/INTRA-SHARE.fxml" />
       </list>
     </option>
   </component>
@@ -312,6 +202,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Pranay Patro/IdeaProjects/INTRA-SHARE/src/com/intrashare/server/backend/FileServer.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -467,12 +358,12 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1534323999319" duration="17804000" />
-      <workItem from="1534343488190" duration="11521000" />
+      <workItem from="1534343488190" duration="15419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30627000" />
+    <option name="totallyTimeSpent" value="34525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -488,11 +379,11 @@
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.1773163" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.1773163" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.6703755" visible="true" weight="0.25036603" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.6703755" visible="true" weight="0.25036603" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
@@ -525,7 +416,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -581,10 +472,12 @@
           <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#2641#2642#0" expanded="true" />
-            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="docComment;class#LoginInfoToServer#0" />
+            <element signature="method#LoginInfoToServer#0;class#LoginInfoToServer#0" />
+            <element signature="method#socketClose#0;class#LoginInfoToServer#0" />
+            <element signature="method#establishConnection#0;class#LoginInfoToServer#0" />
+            <element signature="method#sendLoginInfo#0;class#LoginInfoToServer#0" />
+            <element signature="method#getHm#0;class#LoginInfoToServer#0" />
           </folding>
         </state>
       </provider>
@@ -606,22 +499,15 @@
           <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#verifyLogin#0;class#Controller#0" />
             <element signature="method#verifyLogin#0;class#Controller#0" />
             <element signature="method#tableHandler#0;class#Controller#0" />
             <element signature="method#registerPanel#0;class#Controller#0" />
             <element signature="method#registerAction#0;class#Controller#0" />
             <element signature="method#cancelAction#0;class#Controller#0" />
-            <element signature="docComment;method#downloadAction#0;class#Controller#0" />
+            <element signature="method#uploadAction#0;class#Controller#0" />
             <element signature="method#downloadAction#0;class#Controller#0" />
             <element signature="method#deleteAction#0;class#Controller#0" />
-            <element signature="e#7828#7829#0" expanded="true" />
-            <element signature="e#7858#7859#0" expanded="true" />
             <element signature="method#showMainFrame#0;class#Controller#0" />
-            <element signature="e#8249#8250#0" expanded="true" />
-            <element signature="e#8291#8292#0" expanded="true" />
-            <element signature="e#8366#8367#0" expanded="true" />
-            <element signature="e#8412#8413#0" expanded="true" />
             <element signature="method#processDelete#0;class#Controller#0" />
           </folding>
         </state>
@@ -666,22 +552,15 @@
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#verifyLogin#0;class#Controller#0" />
             <element signature="method#verifyLogin#0;class#Controller#0" />
             <element signature="method#tableHandler#0;class#Controller#0" />
             <element signature="method#registerPanel#0;class#Controller#0" />
             <element signature="method#registerAction#0;class#Controller#0" />
             <element signature="method#cancelAction#0;class#Controller#0" />
-            <element signature="docComment;method#downloadAction#0;class#Controller#0" />
+            <element signature="method#uploadAction#0;class#Controller#0" />
             <element signature="method#downloadAction#0;class#Controller#0" />
             <element signature="method#deleteAction#0;class#Controller#0" />
-            <element signature="e#7828#7829#0" expanded="true" />
-            <element signature="e#7858#7859#0" expanded="true" />
             <element signature="method#showMainFrame#0;class#Controller#0" />
-            <element signature="e#8249#8250#0" expanded="true" />
-            <element signature="e#8291#8292#0" expanded="true" />
-            <element signature="e#8366#8367#0" expanded="true" />
-            <element signature="e#8412#8413#0" expanded="true" />
             <element signature="method#processDelete#0;class#Controller#0" />
           </folding>
         </state>
@@ -695,13 +574,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.css" />
-    <entry file="file://$PROJECT_DIR$/src/frontend/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/INTRA-SHARE.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -717,19 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="48" column="43" lean-forward="true" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/INTRA-SHARE.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding>
-            <element signature="n#AnchorPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#AnchorPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#AnchorPane#3;n#children#0;n#AnchorPane#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,57 +618,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/LoginInfoToServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#2641#2642#0" expanded="true" />
-            <element signature="e#2669#2670#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/frontend/DownloadInfoToServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intrashare/server/ui/MainFrameServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="107" column="79" selection-start-line="107" selection-start-column="79" selection-end-line="107" selection-end-column="79" />
-          <folding>
-            <element signature="method#btnStartServerActionPerformed#0;class#MainFrameServer#0" />
-            <element signature="method#main#0;class#MainFrameServer#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#111#112#0" expanded="true" />
-            <element signature="e#170#171#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -838,37 +650,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intrashare/server/backend/FileServer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/intrashare/server/ui/MainFrameServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        <state relative-caret-position="137">
+          <caret line="107" column="79" selection-start-line="107" selection-start-column="79" selection-end-line="107" selection-end-column="79" />
+          <folding>
+            <element signature="method#btnStartServerActionPerformed#0;class#MainFrameServer#0" />
+            <element signature="method#main#0;class#MainFrameServer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#processLogin#0;class#Login#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/LoginInfoToServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#LoginInfoToServer#0" />
+            <element signature="method#LoginInfoToServer#0;class#LoginInfoToServer#0" />
+            <element signature="method#socketClose#0;class#LoginInfoToServer#0" />
+            <element signature="method#establishConnection#0;class#LoginInfoToServer#0" />
+            <element signature="method#sendLoginInfo#0;class#LoginInfoToServer#0" />
+            <element signature="method#getHm#0;class#LoginInfoToServer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/frontend/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="515">
+          <caret line="239" column="1" lean-forward="true" selection-start-line="239" selection-start-column="1" selection-end-line="239" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#verifyLogin#0;class#Controller#0" />
             <element signature="method#verifyLogin#0;class#Controller#0" />
             <element signature="method#tableHandler#0;class#Controller#0" />
             <element signature="method#registerPanel#0;class#Controller#0" />
             <element signature="method#registerAction#0;class#Controller#0" />
             <element signature="method#cancelAction#0;class#Controller#0" />
-            <element signature="docComment;method#downloadAction#0;class#Controller#0" />
+            <element signature="method#uploadAction#0;class#Controller#0" />
             <element signature="method#downloadAction#0;class#Controller#0" />
             <element signature="method#deleteAction#0;class#Controller#0" />
-            <element signature="e#7828#7829#0" expanded="true" />
-            <element signature="e#7858#7859#0" expanded="true" />
             <element signature="method#showMainFrame#0;class#Controller#0" />
-            <element signature="e#8249#8250#0" expanded="true" />
-            <element signature="e#8291#8292#0" expanded="true" />
-            <element signature="e#8366#8367#0" expanded="true" />
-            <element signature="e#8412#8413#0" expanded="true" />
             <element signature="method#processDelete#0;class#Controller#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intrashare/server/backend/FileServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#FileServer#0" />
+            <element signature="docComment;method#main#0;class#FileServer#0" />
+            <element signature="method#main#0;class#FileServer#0" />
+            <element signature="docComment;method#FileThread#0;class#FileThread#0" />
+            <element signature="method#FileThread#0;class#FileThread#0" />
+            <element signature="docComment;method#run#0;class#FileThread#0" />
+            <element signature="method#run#0;class#FileThread#0" />
+            <element signature="docComment;method#createFile#0;class#FileThread#0" />
+            <element signature="method#createFile#0;class#FileThread#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/INTRA-SHARE.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="129" selection-start-line="12" selection-start-column="129" selection-end-line="12" selection-end-column="129" />
         </state>
       </provider>
     </entry>

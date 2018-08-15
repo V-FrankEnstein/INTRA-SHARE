@@ -158,7 +158,6 @@ public class Controller {
                     selectedItem.getParent().getChildren().add(tt);
                 }
             }
-
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "upload k time pe execption aaya hai", "MainControl.java", JOptionPane.ERROR_MESSAGE);
         }

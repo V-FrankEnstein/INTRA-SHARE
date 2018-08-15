@@ -1,9 +1,16 @@
 .bg-blue {
-    -fx-background-color: white;
+    -fx-background-color: #7765E3;
 }
 .bg-red {
     -fx-background-color: white;
 }
+/*.bg-gray {*/
+    /*background-color: #373737;*/
+/*}*/
 .bg-green {
     -fx-background-color: white;
 }
+.bg-white {
+    -fx-background-color: white;
+}
+

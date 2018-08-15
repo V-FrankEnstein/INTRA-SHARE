@@ -66,7 +66,7 @@ class FileThread implements Runnable {
     }
 
     /**
-     * ***
+     *
      *
      */
     @Override
@@ -106,7 +106,6 @@ class FileThread implements Runnable {
      * @param userName
      * 
      */
-
     public static void createFile(byte[] content, String fileName, String userName) {
         System.out.println("File name in UserRegistrationFolder = " + userName);
 
