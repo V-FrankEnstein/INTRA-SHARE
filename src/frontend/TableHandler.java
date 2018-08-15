@@ -36,8 +36,6 @@ public class TableHandler {
             }
         });
 
-        
-
         root = new RecursiveTreeItem<>(fileDetails, RecursiveTreeObject::getChildren);
     }
 

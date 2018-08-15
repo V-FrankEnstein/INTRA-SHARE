@@ -23,19 +23,19 @@
                 <Label layoutX="47.0" layoutY="219.0" text="UserName" />
                 <Label layoutX="47.0" layoutY="285.0" text="Password" />
                 <Label layoutX="47.0" layoutY="351.0" text="ConfirmPassword" />
-                <JFXTextField fx:id="firstName" layoutX="185.0" layoutY="78.0" />
-                <JFXTextField fx:id="lastName" layoutX="185.0" layoutY="140.0" />
-                <JFXTextField fx:id="userName" layoutX="185.0" layoutY="215.0" />
-                <JFXPasswordField fx:id="password" layoutX="185.0" layoutY="281.0" />
-                <JFXPasswordField fx:id="confirmPassword" layoutX="185.0" layoutY="347.0" />
-                <JFXButton fx:id="register" layoutX="59.0" layoutY="414.0" onAction="#registerAction" text="Register" />
+                <JFXTextField fx:id="txtFirstName" layoutX="185.0" layoutY="78.0" />
+                <JFXTextField fx:id="txtLastName" layoutX="185.0" layoutY="140.0" />
+                <JFXTextField fx:id="txtUserName" layoutX="185.0" layoutY="215.0" />
+                <JFXPasswordField fx:id="txtPassword" layoutX="185.0" layoutY="281.0" />
+                <JFXPasswordField fx:id="txtConfirmPassword" layoutX="185.0" layoutY="347.0" />
+                <JFXButton fx:id="btnRegister" layoutX="59.0" layoutY="414.0" onAction="#registerAction" text="Register" />
                 <JFXButton fx:id="cancel" layoutX="243.0" layoutY="414.0" onAction="#cancelAction" text="Cancel" />
             </children></AnchorPane>
         <AnchorPane fx:id="loginPane" layoutX="400.0" layoutY="0.0" prefHeight="500.0" prefWidth="400.0" styleClass="bg-red">
          <children>
             <Label layoutX="48.0" layoutY="116.0" text="User Name" />
             <Label layoutX="48.0" layoutY="206.0" text="Password" />
-            <JFXButton fx:id="login" layoutX="62.0" layoutY="317.0" onAction="#verifyLogin" text="Login" />
+            <JFXButton fx:id="btnLogin" layoutX="62.0" layoutY="317.0" onAction="#verifyLogin" text="Login" />
             <JFXButton fx:id="registerLoginPane" layoutX="246.0" layoutY="317.0" onAction="#registerPanel" text="Register" />
             <JFXTextField fx:id="txtUserNameLogin" layoutX="48.0" layoutY="147.0" />
             <JFXPasswordField fx:id="txtPasswordLogin" layoutX="48.0" layoutY="250.0" />

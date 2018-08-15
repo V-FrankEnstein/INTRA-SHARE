@@ -31,6 +31,7 @@ public class ObjectMap {
                 objMap.put(dirFiles[i].getPath(), new HashMap<String, HashMap<Long, Long>>());
                 objMap.get(dirFiles[i].getPath()).put(dirFiles[i].getName(), new HashMap<Long, Long>());
                 objMap.get(dirFiles[i].getPath()).get(dirFiles[i].getName()).put(dirFiles[i].length(), dirFiles[i].lastModified());
+                System.out.println(dirFiles[i].lastModified());
             }
         }
 

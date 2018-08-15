@@ -23,27 +23,17 @@ public class TID {
 
     public void notificationOnWindows(String title, String message) {
         if (SystemTray.isSupported()) {
-            //Obtain only one instance of the SystemTray object
             SystemTray tray = SystemTray.getSystemTray();
-
-            //If the icon is a file
             Image image = Toolkit.getDefaultToolkit().createImage("icon.png");
-            //Alternative (if the icon is on the classpath):
-            // Image image = Toolkit.getToolkit().createImage(getClass().getResource("icon.png"));
             TrayIcon trayIcon = new TrayIcon(image, "Tray Demo");
-            //Let the system resizes the image if needed
             trayIcon.setImageAutoSize(true);
-            //Set tooltip text for the tray icon
             trayIcon.setToolTip("System tray icon demo");
             try {
                 tray.add(trayIcon);
             } catch (AWTException ex) {
                 Logger.getLogger(TID.class.getName()).log(Level.SEVERE, null, ex);
             }
-//            int i = 0;
-//            if (i == 0) {
                 trayIcon.displayMessage(title, message, MessageType.INFO);
-//            }
 
         } else {
             System.err.println("System tray not supported!");
